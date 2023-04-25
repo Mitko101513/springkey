@@ -11,7 +11,7 @@ spring:
 jwt:
   auth:
     converter:
-      resource-id: spring-client
+      resource-id: spring-pkce-client
       principal-attribute: preferred_username
 
 logging:
