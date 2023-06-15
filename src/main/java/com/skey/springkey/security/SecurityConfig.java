@@ -38,6 +38,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests()
+                .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers(HttpMethod.GET, "/test/anonymous", "/test/anonymous/**").permitAll()
 //                .requestMatchers(HttpMethod.GET, "/test/admin", "/test/admin/**").hasRole(SUPERVISOR)
 //                .requestMatchers(HttpMethod.GET, "/test/user").hasAnyRole(ADMIN, USER)
